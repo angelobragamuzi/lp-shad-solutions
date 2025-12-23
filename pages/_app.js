@@ -1,5 +1,4 @@
 import Head from 'next/head';
-// Importação de todos os seus arquivos de estilo na raiz da aplicação
 import '../styles/variables.css';
 import '../styles/base.css';
 import '../styles/layout.css';

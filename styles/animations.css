@@ -2,7 +2,7 @@
 .hero p,
 .hero-actions,
 .manifest {
-    animation: fadeUp .9s ease both;
+    animation: fadeUp .9s ease forwards;
 }
 
 @keyframes fadeUp {

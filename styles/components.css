@@ -77,7 +77,14 @@
 }
 
 .btn.secondary {
+    border-color: rgba(255, 255, 255, .35);
     color: var(--fg);
+}
+
+.btn.secondary:hover {
+    transform: translateY(-2px);
+    border-color: var(--fg);
+    box-shadow: 0 8px 22px rgba(255, 255, 255, .08);
 }
 
 .hero {
@@ -109,6 +116,13 @@
     margin-bottom: 3rem;
 }
 
+.hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+
 .manifest {
     font-size: 1.4rem;
     font-weight: 500;
@@ -124,21 +138,28 @@
 .system-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .system {
     position: relative;
     border: 1px solid var(--line);
     padding: 2.2rem;
-    background: linear-gradient(180deg,
+    background:
+        radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%),
+            rgba(255, 255, 255, 0.08),
+            transparent 40%),
+        linear-gradient(180deg,
             rgba(255, 255, 255, .03),
             rgba(255, 255, 255, .01));
+
     backdrop-filter: blur(6px);
+    transform-style: preserve-3d;
+
     transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
+        transform .4s cubic-bezier(.2, .8, .2, 1),
+        box-shadow .4s ease,
+        border-color .4s ease;
 }
 
 .system::before {
@@ -153,21 +174,22 @@
 }
 
 .system:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, .4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .6);
+    border-color: rgba(255, 255, 255, .45);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, .65),
+        inset 0 0 0 1px rgba(255, 255, 255, .05);
 }
 
 .system:hover::before {
     opacity: 1;
 }
 
-.system-head {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    margin-bottom: 1rem;
+.system-head svg {
+    transition:
+        transform .4s ease,
+        filter .4s ease;
 }
+
 
 .system-head i {
     width: 18px;
@@ -179,9 +201,9 @@
         filter .3s ease;
 }
 
-.system:hover .system-head i {
-    opacity: 1;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, .35));
+.system:hover .system-head svg {
+    transform: translateZ(24px) scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, .35));
 }
 
 .system h3 {
@@ -189,4 +211,16 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--muted);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.system p {
+    transition: color .3s ease;
+}
+
+.system:hover p {
+    color: var(--fg);
 }

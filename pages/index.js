@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>ShadFinancy — Sistema de Gestão Financeira</title>
+                <title>SS - Inteligência Aplicada</title>
                 <link rel="icon" href="/images/icon-logo.svg" type="image/svg+xml" />
                 <link rel="shortcut icon" href="/images/icon-logo.svg" />
                 <meta name="theme-color" content="#0a0a0a" />
