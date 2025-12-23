@@ -1,10 +1,8 @@
 import { Resend } from 'resend'
 
-// ⚠️ NÃO RECOMENDADO EM PRODUÇÃO
 const resend = new Resend('re_eJ9S5UvF_MEYGkFBPyDA6rNE3Q25egCap')
 
-// ⚠️ E-mails fixos
-const FROM_EMAIL = 'ShadSolutions <shadsolutionsinteligence@gmail.com>'
+const FROM_EMAIL = 'ShadSolutions <onboarding@resend.dev>'
 const TO_EMAIL = 'shadsolutionsinteligence@gmail.com'
 
 export default async function handler(req, res) {
