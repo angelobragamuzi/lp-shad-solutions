@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function Hero({ onRequestDemo }) {
     return (
         <section className="hero">
             <div className="container hero-grid">
@@ -8,9 +8,19 @@ export default function Hero() {
                         ShadFinancy é um aplicativo de gestão financeira focado
                         em controle, visualização e planejamento com base em dados reais.
                     </p>
+
                     <div className="hero-actions">
-                        <a href="#produto" className="btn primary">Funcionalidades</a>
-                        <a href="#inteligencia" className="btn secondary">Inteligência</a>
+                        <button
+                            type="button"
+                            className="btn primary"
+                            onClick={onRequestDemo}
+                        >
+                            Solicitar demonstração
+                        </button>
+
+                        <a href="#inteligencia" className="btn secondary">
+                            Inteligência
+                        </a>
                     </div>
                 </div>
 
