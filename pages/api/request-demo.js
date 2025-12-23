@@ -1,13 +1,18 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// ⚠️ NÃO RECOMENDADO EM PRODUÇÃO
+const resend = new Resend('re_eJ9S5UvF_MEYGkFBPyDA6rNE3Q25egCap')
+
+// ⚠️ E-mails fixos
+const FROM_EMAIL = 'ShadSolutions <shadsolutionsinteligence@gmail.com>'
+const TO_EMAIL = 'shadsolutionsinteligence@gmail.com'
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' })
     }
 
-    const { name, email, phone, contactType } = req.body
+    const { name, email, phone, contactType } = req.body || {}
 
     if (!name || !email) {
         return res.status(400).json({
@@ -17,8 +22,8 @@ export default async function handler(req, res) {
 
     try {
         await resend.emails.send({
-            from: process.env.FROM_EMAIL,
-            to: process.env.TO_EMAIL,
+            from: FROM_EMAIL,
+            to: TO_EMAIL,
             subject: `Solicitação de demonstração — ${name}`,
             text: `
 Nome: ${name}
@@ -30,7 +35,7 @@ Tipo de contato: ${contactType || '-'}
 
         return res.status(200).json({ ok: true })
     } catch (err) {
-        console.error(err)
+        console.error('Erro Resend:', err)
         return res.status(500).json({
             error: 'Erro ao enviar e-mail',
         })
