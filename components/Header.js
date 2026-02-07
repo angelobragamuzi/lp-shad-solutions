@@ -1,108 +1,42 @@
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Modal from './Modal'
-import CustomSelect from './CustomSelect'
+import Image from "next/image";
+
+const links = [
+    { href: "#servicos", label: "Serviços" },
+    { href: "#portfolio", label: "Portfólio" },
+    { href: "#diferenciais", label: "Diferenciais" },
+];
 
 export default function Header() {
-    const [open, setOpen] = useState(false)
-    const [closing, setClosing] = useState(false)
-    const [sending, setSending] = useState(false)
-    const [error, setError] = useState(null)
-    const [form, setForm] = useState({ name: '', email: '', phone: '', contactType: 'Empresa' })
-    const ANIM_MS = 260
-
-    function handleChange(e) {
-        const { name, value } = e.target
-        setForm(prev => ({ ...prev, [name]: value }))
-    }
-
-    function startClose() {
-        setClosing(true)
-        setTimeout(() => {
-            setOpen(false)
-            setClosing(false)
-        }, ANIM_MS)
-    }
-
-    async function handleSubmit(e) {
-        e.preventDefault()
-        setError(null)
-        setSending(true)
-
-        try {
-            const resp = await fetch('/api/request-demo', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form),
-            })
-
-            const data = await resp.json()
-            if (!resp.ok) throw new Error(data.error || 'Erro desconhecido')
-
-            // success
-            setSending(false)
-            startClose()
-        } catch (err) {
-            console.error(err)
-            setError(err.message || 'Erro ao enviar')
-            setSending(false)
-        }
-    }
-
     return (
-        <header className="header">
-            <div className="container nav">
-                <div className="logo">
+        <header className="site-header">
+            <div className="container nav-shell">
+                <a className="logo" href="#topo" aria-label="Shad Solutions">
                     <Image
                         src="/images/logo.svg"
-                        alt="ShadSolutions"
-                        width={210}
-                        height={56}
-                        priority={false}
+                        alt="Shad Solutions"
+                        width={194}
+                        height={50}
+                        priority={true}
                     />
-                </div>
+                </a>
 
-                <button className="btn secondary" onClick={() => setOpen(true)}>
-                    Solicitar demonstração
-                </button>
+                <nav className="nav-links" aria-label="Navegação principal">
+                    {links.map((link) => (
+                        <a href={link.href} key={link.href}>
+                            {link.label}
+                        </a>
+                    ))}
+                </nav>
+
+                <a
+                    className="btn header-cta"
+                    href="https://wa.me/553398251124?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Solicitar orçamento
+                </a>
             </div>
-
-            {open && (
-                <Modal>
-                    <div className={`modal-overlay ${closing ? 'closing' : 'open'}`} onClick={startClose}>
-                        <div className={`modal ${closing ? 'closing' : 'open'}`} onClick={e => e.stopPropagation()}>
-                            <button className="modal-close" onClick={startClose} aria-label="Fechar">×</button>
-                            <h3>Solicitar demonstração</h3>
-                            <form className="modal-form" onSubmit={handleSubmit}>
-                                <label>
-                                    Nome
-                                    <input name="name" value={form.name} onChange={handleChange} required />
-                                </label>
-
-                                <label>
-                                    E-mail
-                                    <input name="email" type="email" value={form.email} onChange={handleChange} required />
-                                </label>
-
-                                <label>
-                                    Telefone
-                                    <input name="phone" type="tel" value={form.phone} onChange={handleChange} />
-                                </label>
-
-                                <label>
-                                    Você está entrando em contato como
-                                    <CustomSelect name="contactType" value={form.contactType} onChange={handleChange} options={["Empresa", "Pessoa", "Parceiro", "Outro"]} />
-                                </label>
-
-                                <div className="modal-actions">
-                                    <button type="submit" className="btn primary">Enviar</button>
-                                    <button type="button" className="btn secondary" onClick={startClose}>Fechar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </Modal>
-            )}
         </header>
-    )
+    );
 }

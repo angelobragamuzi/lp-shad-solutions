@@ -1,27 +1,35 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import SystemsGrid from '../components/SystemsGrid'
-import AIGrid from '../components/AIGrid'
-import Footer from '../components/Footer'
+import Head from "next/head";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Portfolio from "../components/SystemsGrid";
+import Differentials from "../components/Differentials";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
     return (
         <>
             <Head>
-                <title>SS - Inteligência Aplicada</title>
+                <title>Shad Solutions | SS Soluções Digitais</title>
+                <meta
+                    name="description"
+                    content="Software sob medida, landing pages e apps mobile para empresas que querem crescer com tecnologia."
+                />
                 <link rel="icon" href="/images/icon-logo.svg" type="image/svg+xml" />
                 <link rel="shortcut icon" href="/images/icon-logo.svg" />
-                <meta name="theme-color" content="#0a0a0a" />
+                <meta name="theme-color" content="#050506" />
             </Head>
 
             <Header />
             <main>
                 <Hero />
-                <SystemsGrid />
-                <AIGrid />
+                <Services />
+                <Portfolio />
+                <Differentials />
+                <ContactSection />
             </main>
             <Footer />
         </>
-    )
+    );
 }

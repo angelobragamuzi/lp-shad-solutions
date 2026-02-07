@@ -1,37 +1,79 @@
-import { Receipt, LayoutDashboard, BarChart3, Layers } from 'lucide-react'
+import Image from "next/image";
+import Reveal from "./Reveal";
 
-function System({ Icon, title, children }) {
-    return (
-        <div className="system">
-            <div className="system-head">
-                <Icon />
-                <h3>{title}</h3>
-            </div>
-            <p>{children}</p>
-        </div>
-    )
-}
+const projects = [
+    {
+        name: "FallzsStore",
+        category: "E-commerce Gamer",
+        description:
+            "Plataforma de vendas com catálogo gamer, jornada de compra direta e experiência visual moderna para aumentar conversão.",
+        points: [
+            "Catálogo organizado por interesse",
+            "Página de produto com foco em decisão",
+            "Fluxo de checkout simplificado",
+        ],
+        image: "/site1.png",
+    },
+    {
+        name: "Roda20 Brasil",
+        category: "Loja de Rodas",
+        description:
+            "Landing page comercial com posicionamento forte, vitrine de produtos e CTA visível para acelerar atendimento.",
+        points: [
+            "Seções objetivas para oferta",
+            "Contato imediato no topo e no fechamento",
+            "Design responsivo para mobile",
+        ],
+        image: "/roda20.png",
+    },
+];
 
-export default function SystemsGrid() {
+export default function Portfolio() {
     return (
-        <section id="produto">
-            <div className="container split">
-                <div>
-                    <h2>O Sistema</h2>
+        <section id="portfolio" className="portfolio">
+            <div className="container">
+                <Reveal className="section-head">
+                    <span className="eyebrow">Portfólio</span>
+                    <h2>Projetos reais entregues para operações de verdade.</h2>
                     <p className="text-lg">
-                        Plataforma criada para organizar, interpretar e transformar
-                        dados financeiros em decisões claras.
+                        Cada case é construído para gerar impacto visual, clareza de
+                        comunicação e crescimento.
                     </p>
-                </div>
+                </Reveal>
 
-                <div className="system-grid">
-                    <System Icon={Receipt} title="Registro Financeiro">Entradas e saídas com histórico persistente e categorização inteligente.</System>
-                    <System Icon={LayoutDashboard} title="Dashboard">Resumo da saúde financeira com indicadores claros e dados consolidados.</System>
-                    <System Icon={BarChart3} title="Visualização de Dados">Dados objetivos para acompanhamento e análise financeira contínua.</System>
-                    <System Icon={Layers} title="Design">Interface brutalista refinada, focada em clareza e performance.</System>
+                <div className="portfolio-list">
+                    {projects.map((project, index) => (
+                        <Reveal
+                            as="article"
+                            className={`portfolio-card ${index % 2 === 1 ? "reverse" : ""}`}
+                            delay={index * 0.1}
+                            key={project.name}
+                        >
+                            <div className="portfolio-media">
+                                <Image
+                                    src={project.image}
+                                    alt={`${project.name} - ${project.category}`}
+                                    width={1200}
+                                    height={760}
+                                />
+                            </div>
+                            <div className="portfolio-content">
+                                <span className="portfolio-tag">{project.category}</span>
+                                <h3>{project.name}</h3>
+                                <p>{project.description}</p>
+                                <ul className="portfolio-points">
+                                    {project.points.map((item) => (
+                                        <li key={item}>{item}</li>
+                                    ))}
+                                </ul>
+                                <a className="btn secondary" href="#contato">
+                                    Quero um projeto assim
+                                </a>
+                            </div>
+                        </Reveal>
+                    ))}
                 </div>
             </div>
         </section>
-    )
+    );
 }
-
