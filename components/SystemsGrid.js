@@ -15,6 +15,18 @@ const projects = [
         image: "/site1.png",
     },
     {
+        name: "ShadFinnancy",
+        category: "Aplicativo de Gestão Financeira",
+        description:
+            "App focado em ajudar pessoas a manterem um controle financeiro melhor, com visão clara da rotina e suporte para decisões.",
+        points: [
+            "Dashboards fáceis de ler para acompanhamento diário",
+            "Agente de IA integrado para orientação financeira",
+            "Simulador de cenários que gera plano financeiro personalizado em PDF",
+        ],
+        image: "/financa.png",
+    },
+    {
         name: "Roda20 Brasil",
         category: "Loja de Rodas",
         description:
