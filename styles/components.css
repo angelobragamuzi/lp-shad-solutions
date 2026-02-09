@@ -142,7 +142,6 @@
     left: -7%;
     top: 12%;
     background: rgba(255, 255, 255, 0.28);
-    animation: glowDriftA 14s ease-in-out infinite alternate;
 }
 
 .hero::after {
@@ -151,7 +150,6 @@
     right: -10%;
     top: 8%;
     background: rgba(255, 255, 255, 0.16);
-    animation: glowDriftB 18s ease-in-out infinite alternate;
 }
 
 .hero-inner {
@@ -272,7 +270,6 @@
         radial-gradient(420px 220px at 8% 42%, rgba(255, 255, 255, 0.055), transparent 75%),
         radial-gradient(420px 220px at 92% 55%, rgba(255, 255, 255, 0.05), transparent 75%);
     opacity: 0.55;
-    animation: ambientDrift 22s ease-in-out infinite alternate;
 }
 
 .services-grid {
