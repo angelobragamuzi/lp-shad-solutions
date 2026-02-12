@@ -1,21 +1,22 @@
 ﻿import { motion } from "framer-motion";
+import { forwardRef } from "react";
 
 const variants = {
     hidden: { opacity: 0, y: 18 },
     visible: { opacity: 1, y: 0 },
 };
 
-export default function Reveal({
-    children,
-    delay = 0,
-    className,
-    as = "div",
-}) {
+const Reveal = forwardRef(function Reveal(
+    { children, delay = 0, className, as = "div", ...rest },
+    ref
+) {
     const MotionTag = motion[as] || motion.div;
 
     return (
         <MotionTag
+            ref={ref}
             className={className}
+            {...rest}
             variants={variants}
             initial="hidden"
             whileInView="visible"
@@ -25,4 +26,6 @@ export default function Reveal({
             {children}
         </MotionTag>
     );
-}
+});
+
+export default Reveal;

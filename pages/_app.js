@@ -12,6 +12,15 @@ export default function MyApp({ Component, pageProps }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <Component {...pageProps} />
+            <a
+                className="whatsapp-float"
+                href="https://wa.me/553398251124?text=Ol%C3%A1%21%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fale com a Shad Solutions no WhatsApp"
+            >
+                <img src="/zap.webp" alt="" />
+            </a>
         </>
     );
 }

@@ -38,6 +38,18 @@ const projects = [
         ],
         image: "/roda20.png",
     },
+    {
+        name: "Buquê de Cacau",
+        category: "Loja de Buquês de Luxo",
+        description:
+            "Landing page comercial com posicionamento forte, vitrine de produtos e CTA visível para acelerar atendimento.",
+        points: [
+            "Seções objetivas para oferta",
+            "Contato imediato no topo e no fechamento",
+            "Design responsivo para mobile",
+        ],
+        image: "/buque.png",
+    },
 ];
 
 export default function Portfolio() {
@@ -57,7 +69,7 @@ export default function Portfolio() {
                     {projects.map((project, index) => (
                         <Reveal
                             as="article"
-                            className={`portfolio-card ${index % 2 === 1 ? "reverse" : ""}`}
+                            className="portfolio-card"
                             delay={index * 0.1}
                             key={project.name}
                         >
@@ -65,8 +77,8 @@ export default function Portfolio() {
                                 <Image
                                     src={project.image}
                                     alt={`${project.name} - ${project.category}`}
-                                    width={1200}
-                                    height={760}
+                                    width={1100}
+                                    height={780}
                                 />
                             </div>
                             <div className="portfolio-content">

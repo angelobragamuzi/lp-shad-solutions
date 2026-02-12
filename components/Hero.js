@@ -32,9 +32,7 @@ export default function Hero() {
                 <Reveal className="hero-cta" delay={0.22}>
                     <a
                         className="btn primary"
-                        href="https://wa.me/553398251124?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/planos#formulario"
                     >
                         Solicitar orçamento
                     </a>
