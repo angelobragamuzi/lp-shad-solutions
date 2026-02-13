@@ -21,7 +21,7 @@ export default function ContactSection() {
                         >
                             Solicitar orçamento
                         </a>
-                        <a className="btn secondary" href="#portfolio">
+                        <a className="btn secondary" href="/portfolio">
                             Ver cases
                         </a>
                         <span className="cta-note">

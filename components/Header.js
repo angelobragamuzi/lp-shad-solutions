@@ -2,7 +2,8 @@ import Image from "next/image";
 
 const links = [
     { href: "/#servicos", label: "Serviços" },
-    { href: "/#portfolio", label: "Portfólio" },
+    { href: "/shadmanager", label: "ShadManager" },
+    { href: "/portfolio", label: "Portfólio" },
     { href: "/#diferenciais", label: "Diferenciais" },
     { href: "/planos", label: "Planos" },
 ];
@@ -13,7 +14,7 @@ export default function Header() {
             <div className="container nav-shell">
                 <a className="logo" href="/#topo" aria-label="Shad Solutions">
                     <Image
-                        src="/images/logo.svg"
+                        src="/logo.svg"
                         alt="Shad Solutions"
                         width={194}
                         height={50}

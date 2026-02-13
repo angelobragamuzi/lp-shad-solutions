@@ -1,6 +1,7 @@
 const links = [
     { href: "/#servicos", label: "Serviços" },
-    { href: "/#portfolio", label: "Portfólio" },
+    { href: "/shadmanager", label: "ShadManager" },
+    { href: "/portfolio", label: "Portfólio" },
     { href: "/#diferenciais", label: "Diferenciais" },
     { href: "/planos", label: "Planos" },
     { href: "/#contato", label: "Contato" },
