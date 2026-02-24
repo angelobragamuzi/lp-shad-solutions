@@ -1,64 +1,48 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 
-const services = [
+const benefits = [
     {
-        title: "Landing Pages",
-        text: "Páginas de alta conversão com estrutura de oferta, prova e CTA para gerar leads qualificados.",
-        points: [
-            "Copy orientada a conversão",
-            "Estrutura validada para campanhas",
-            "Carregamento rápido e SEO técnico",
-        ],
+        title: "Escalabilidade nativa",
+        text: "Arquitetura pronta para crescer sem gargalos quando o volume subir.",
     },
     {
-        title: "Apps Mobile",
-        text: "Aplicativos para operação e relacionamento com clientes, com experiência fluida e escalável.",
-        points: [
-            "Interface mobile-first",
-            "Integrações com APIs e sistemas",
-            "Publicação e evolução contínua",
-        ],
+        title: "Performance first",
+        text: "Experiências rápidas e leves para elevar conversão e retenção.",
     },
     {
-        title: "Softwares Sob Medida",
-        text: "Sistemas personalizados para processos internos, automações e gestão com dados em tempo real.",
-        points: [
-            "Mapeamento de fluxo real",
-            "Painéis e módulos personalizados",
-            "Suporte técnico pós-entrega",
-        ],
+        title: "Automação inteligente",
+        text: "Fluxos conectados que reduzem operação manual e aceleram decisões.",
+    },
+    {
+        title: "Evolução contínua",
+        text: "Base modular para lançar, iterar e expandir sem retrabalho.",
     },
 ];
 
 export default function Services() {
     return (
-        <section className="services" id="servicos">
-            <div className="container">
-                <Reveal className="section-head">
-                    <span className="eyebrow">Serviços</span>
-                    <h2>Soluções digitais alinhadas ao seu objetivo de negócio.</h2>
+        <section className="benefits-section" id="beneficios">
+            <div className="landing-shell">
+                <Reveal className="section-head section-head-left">
+                    <span className="eyebrow">Benefícios</span>
+                    <h2>Estrutura digital para operar sem limites.</h2>
                     <p className="text-lg">
-                        Entregamos produtos com design estratégico, engenharia sólida e
-                        foco em resultado.
+                        Menos ruído, mais velocidade e uma base preparada para
+                        crescimento real.
                     </p>
                 </Reveal>
 
-                <div className="services-grid">
-                    {services.map((service, index) => (
+                <div className="benefits-grid">
+                    {benefits.map((benefit, index) => (
                         <Reveal
                             as="article"
-                            key={service.title}
-                            className="service-card"
+                            key={benefit.title}
+                            className="benefit-card"
                             delay={index * 0.08}
                         >
-                            <span className="service-index">0{index + 1}</span>
-                            <h3>{service.title}</h3>
-                            <p>{service.text}</p>
-                            <ul className="service-points">
-                                {service.points.map((point) => (
-                                    <li key={point}>{point}</li>
-                                ))}
-                            </ul>
+                            <span className="benefit-index">0{index + 1}</span>
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.text}</p>
                         </Reveal>
                     ))}
                 </div>

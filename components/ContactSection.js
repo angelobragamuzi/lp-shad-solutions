@@ -1,32 +1,35 @@
 import Reveal from "./Reveal";
 
-export default function ContactSection() {
+export default function ContactSection({ onOpenContact }) {
     return (
-        <section id="contato" className="final-cta">
-            <div className="container">
-                <Reveal className="cta-panel">
+        <section id="contato" className="cta-final-section">
+            <div className="landing-shell">
+                <Reveal className="cta-panel cta-panel-minimal">
                     <div className="cta-copy">
-                        <span className="eyebrow">Pronto para evoluir</span>
-                        <h2>Vamos desenhar a solução digital certa para a sua empresa.</h2>
+                        <span className="eyebrow">Próximo passo</span>
+                        <h2>Vamos transformar sua ideia em um sistema de verdade?</h2>
                         <p className="text-lg">
-                            Fale com a Shad Solutions e receba um plano objetivo para tirar o
-                            projeto do papel com velocidade e qualidade.
+                            Converse com a Shad Solutions e receba uma proposta clara,
+                            objetiva e alinhada ao momento do seu negócio.
                         </p>
                     </div>
 
-                    <div className="cta-actions">
+                    <div className="cta-actions cta-actions-inline">
                         <a
                             className="btn primary"
                             href="/planos#formulario"
+                            onClick={(event) => {
+                                if (typeof onOpenContact === "function") {
+                                    event.preventDefault();
+                                    onOpenContact();
+                                }
+                            }}
                         >
-                            Solicitar orçamento
+                            Solicitar proposta
                         </a>
-                        <a className="btn secondary" href="/portfolio">
-                            Ver cases
+                        <a className="btn secondary" href="/planos">
+                            Conhecer planos
                         </a>
-                        <span className="cta-note">
-                            shadsolutionsinteligence@gmail.com
-                        </span>
                     </div>
                 </Reveal>
             </div>

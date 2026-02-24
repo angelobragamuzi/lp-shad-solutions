@@ -1,44 +1,59 @@
 import Reveal from "./Reveal";
-import PortfolioCarousel from "./PortfolioCarousel";
 
-const highlights = [
-    "Arquitetura orientada a performance",
-    "Design funcional com foco em conversão",
-    "Entrega com suporte técnico contínuo",
-];
+const HERO_POSTER =
+    "https://cdn.pixabay.com/video/2022/10/24/136268-764387688_large.jpg";
+const HERO_VIDEO =
+    "https://cdn.pixabay.com/video/2022/10/24/136268-764387688_medium.mp4";
 
 export default function Hero() {
     return (
-        <section className="hero" id="topo">
-            <div className="container hero-inner">
-                <Reveal className="hero-content" delay={0.05}>
-                    <span className="eyebrow hero-kicker">SS Soluções Digitais</span>
+        <section className="hero-minimal" id="topo">
+            <div className="hero-media" aria-hidden="true">
+                <img
+                    className="hero-fallback"
+                    src={HERO_POSTER}
+                    alt=""
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                />
+                <video
+                    className="hero-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster={HERO_POSTER}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    disableRemotePlayback
+                    disablePictureInPicture
+                    controlsList="nodownload noplaybackrate nofullscreen noremoteplayback"
+                >
+                    <source src={HERO_VIDEO} type="video/mp4" />
+                </video>
+            </div>
+
+            <div className="hero-overlay" aria-hidden="true" />
+            <div className="hero-grid" aria-hidden="true" />
+
+            <div className="hero-content-wrap">
+                <Reveal className="hero-content-minimal" delay={0.05}>
                     <h1 className="hero-title">
-                        Tecnologia sob medida para empresas que querem crescer com
-                        autoridade.
+                        Software e sistemas personalizados para acelerar sua empresa.
                     </h1>
                     <p className="hero-subtitle">
-                        Criamos landing pages, apps mobile e softwares personalizados
-                        para transformar operação, posicionamento e vendas.
+                        {"Criamos solu\u00e7\u00f5es sob medida para automatizar processos, aumentar produtividade e apoiar o crescimento do seu neg\u00f3cio."}
                     </p>
                     <div className="hero-cta">
-                        <a className="btn primary" href="/planos#formulario">
-                            Solicitar orçamento
+                        <a className="btn primary" href="/#formulario">
+                            Iniciar projeto
                         </a>
-                        <a className="btn secondary" href="/portfolio">
-                            Ver portfólio
+                        <a className="btn secondary" href="/#planos">
+                            Conhecer planos
                         </a>
                     </div>
-                </Reveal>
-
-                <Reveal as="div" className="hero-showcase" delay={0.18}>
-                    <PortfolioCarousel />
-                </Reveal>
-
-                <Reveal as="ul" className="hero-highlights" delay={0.24}>
-                    {highlights.map((item) => (
-                        <li key={item}>{item}</li>
-                    ))}
                 </Reveal>
             </div>
         </section>

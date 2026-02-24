@@ -1,17 +1,21 @@
 import Image from "next/image";
+import { BarChart3, MessageSquare, Rocket } from "lucide-react";
 
 const links = [
-    { href: "/#servicos", label: "Serviços" },
-    { href: "/shadmanager", label: "ShadManager" },
-    { href: "/portfolio", label: "Portfólio" },
-    { href: "/#diferenciais", label: "Diferenciais" },
-    { href: "/planos", label: "Planos" },
+    { href: "/#produtos", label: "Produtos", icon: BarChart3 },
+    { href: "/#planos", label: "Planos", icon: Rocket },
+    {
+        href: "/#formulario",
+        label: "Falar com especialista",
+        icon: MessageSquare,
+        opensModal: true,
+    },
 ];
 
-export default function Header() {
+export default function Header({ home = false, onOpenContact }) {
     return (
-        <header className="site-header">
-            <div className="container nav-shell">
+        <header className={`site-header${home ? " site-header-home" : ""}`}>
+            <div className={home ? "nav-shell nav-shell-wide" : "container nav-shell"}>
                 <a className="logo" href="/#topo" aria-label="Shad Solutions">
                     <Image
                         src="/logo.svg"
@@ -22,20 +26,24 @@ export default function Header() {
                     />
                 </a>
 
-                <nav className="nav-links" aria-label="Navegação principal">
+                <nav className="header-actions" aria-label={"Navega\u00e7\u00e3o principal"}>
                     {links.map((link) => (
-                        <a href={link.href} key={link.href}>
-                            {link.label}
+                        <a
+                            className="header-action"
+                            href={link.href}
+                            key={link.href}
+                            onClick={(event) => {
+                                if (link.opensModal && typeof onOpenContact === "function") {
+                                    event.preventDefault();
+                                    onOpenContact();
+                                }
+                            }}
+                        >
+                            <link.icon size={16} strokeWidth={1.9} aria-hidden="true" />
+                            <span>{link.label}</span>
                         </a>
                     ))}
                 </nav>
-
-                <a
-                    className="btn header-cta"
-                    href="/planos#formulario"
-                >
-                    Solicitar orçamento
-                </a>
             </div>
         </header>
     );

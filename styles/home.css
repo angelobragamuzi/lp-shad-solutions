@@ -1,0 +1,536 @@
+/* Home page (shadcn-inspired, no rounded borders) */
+
+.site-header-home {
+    background: rgba(7, 10, 18, 0.82);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.nav-shell-wide,
+.landing-shell,
+.footer-shell-wide {
+    width: min(1440px, calc(100% - clamp(2rem, 6vw, 6rem)));
+    margin: 0 auto;
+}
+
+.nav-shell-wide {
+    min-height: 78px;
+}
+
+.home-page {
+    background: #0b0f1a;
+}
+
+.home-page section {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+}
+
+.hero-minimal {
+    position: relative;
+    min-height: clamp(620px, 92vh, 900px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    background: #0b0f1a;
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: #040913;
+}
+
+.hero-media .hero-fallback,
+.hero-media .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Hide speed-controller overlays injected over background videos */
+.hero-media .vsc-controller,
+.hero-media [class*="vsc-controller"],
+.hero-media [id*="vsc-controller"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.hero-media .hero-fallback {
+    opacity: 0.3;
+    transform: scale(1.03);
+    filter: saturate(0.98) contrast(1.03) brightness(0.78);
+}
+
+.hero-media .hero-video {
+    opacity: 0.44;
+    transform: scale(1.03);
+    filter: saturate(0.98) contrast(1.02) brightness(0.8);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 6, 15, 0.44) 0%,
+            rgba(3, 8, 20, 0.64) 62%,
+            rgba(4, 8, 18, 0.82) 100%
+        ),
+        radial-gradient(
+            78% 38% at 50% 8%,
+            rgba(56, 189, 248, 0.1),
+            transparent 70%
+        ),
+        radial-gradient(
+            80% 44% at 50% 96%,
+            rgba(37, 99, 235, 0.1),
+            transparent 72%
+        );
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 88%);
+}
+
+.hero-content-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-content-minimal {
+    width: min(980px, calc(100% - clamp(2rem, 8vw, 8rem)));
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    text-align: center;
+}
+
+.home-page .hero-title {
+    max-width: 17ch;
+    text-wrap: balance;
+    font-size: clamp(2.35rem, 6.4vw, 5rem);
+    line-height: 1.02;
+    color: #f8fafc;
+    text-shadow: 0 8px 24px rgba(2, 6, 23, 0.48);
+}
+
+.home-page .hero-subtitle {
+    max-width: 56ch;
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    color: #cbd5e1;
+}
+
+.home-page .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.45rem;
+}
+
+.home-page .btn,
+.site-header-home .btn,
+.home-page .benefit-card,
+.home-page .proof-card,
+.home-page .cta-panel-minimal,
+.footer-home {
+    border-radius: 0;
+}
+
+.home-page .btn,
+.site-header-home .btn {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.92rem;
+    padding: 0.72rem 1.15rem;
+}
+
+.home-page .btn.primary {
+    border: 1px solid rgba(96, 165, 250, 0.5);
+    background: #111827;
+    color: #e2e8f0;
+    box-shadow: none;
+}
+
+.home-page .btn.secondary,
+.site-header-home .btn.header-cta {
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    background: rgba(15, 23, 42, 0.65);
+    color: #e2e8f0;
+}
+
+.benefits-section,
+.proof-section,
+.plans-section,
+.plans-form,
+.cta-final-section {
+    border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.benefits-section {
+    background: linear-gradient(180deg, rgba(10, 14, 25, 0.94), rgba(10, 14, 25, 0.84));
+}
+
+.section-head-left {
+    width: min(820px, 100%);
+    margin: 0 0 2rem;
+    text-align: left;
+}
+
+.section-head-left h2 {
+    font-size: clamp(1.85rem, 4.2vw, 3rem);
+}
+
+.benefits-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.benefit-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(15, 23, 42, 0.72);
+    padding: 1.2rem;
+    display: grid;
+    gap: 0.6rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.benefit-index {
+    width: fit-content;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    color: #93c5fd;
+    font-family: "Sora", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    padding: 0.2rem 0.55rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.08rem;
+}
+
+.benefit-card p {
+    color: #cbd5e1;
+    font-size: 0.93rem;
+}
+
+.proof-section {
+    background: linear-gradient(180deg, rgba(9, 13, 23, 0.86), rgba(9, 13, 23, 0.97));
+}
+
+.plans-section {
+    background: linear-gradient(180deg, rgba(9, 13, 23, 0.97), rgba(8, 12, 22, 0.98));
+}
+
+.plans-form {
+    background: linear-gradient(180deg, rgba(8, 12, 22, 0.98), rgba(7, 10, 18, 1));
+    padding-bottom: clamp(4rem, 8vw, 5.6rem);
+}
+
+.home-page .plans-section .section-head,
+.home-page .plans-form .section-head {
+    width: min(820px, 100%);
+    margin: 0 0 2rem;
+    text-align: left;
+}
+
+.home-page .plans-section .plans-disclaimer {
+    text-align: left;
+    margin-top: 1.2rem;
+}
+
+.home-form-actions {
+    margin-top: 1rem;
+}
+
+.home-form-actions .btn {
+    min-width: 210px;
+}
+
+.products-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.3rem;
+    align-items: start;
+}
+
+.products-copy {
+    display: grid;
+    gap: 0.9rem;
+    max-width: 74ch;
+}
+
+.products-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.22);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.product-column {
+    padding: 1.5rem 1.2rem 1.4rem;
+    display: grid;
+    gap: 0.78rem;
+    min-width: 0;
+}
+
+.product-column:first-child {
+    border-right: 1px solid rgba(148, 163, 184, 0.2);
+    padding-left: 0.2rem;
+    padding-right: 1.2rem;
+}
+
+.product-column:last-child {
+    padding-left: 1.2rem;
+    padding-right: 0.2rem;
+}
+
+.product-brand {
+    width: 100%;
+    min-height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+.product-brand img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 84px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.product-brand.is-shadmanager {
+    min-height: 124px;
+}
+
+.product-brand.is-shadmanager img {
+    width: min(100%, 560px);
+    max-width: min(100%, 560px);
+    max-height: 124px;
+}
+
+.product-brand.is-shadeduca {
+    min-height: 108px;
+}
+
+.product-brand.is-shadeduca img {
+    max-height: 86px;
+}
+
+.product-summary {
+    color: #cbd5e1;
+    font-size: 0.98rem;
+    max-width: 72ch;
+}
+
+.product-points {
+    list-style: none;
+    display: grid;
+    gap: 0.32rem;
+    color: #cbd5e1;
+    font-size: 0.93rem;
+}
+
+.product-points li::before {
+    content: "- ";
+    color: #7dd3fc;
+}
+
+.product-column .btn {
+    width: fit-content;
+    margin-top: 0.2rem;
+}
+
+.cta-final-section {
+    background: linear-gradient(180deg, rgba(9, 13, 23, 0.97), rgba(7, 10, 18, 1));
+    padding-bottom: clamp(4rem, 8vw, 5.6rem);
+}
+
+.cta-panel-minimal {
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: rgba(15, 23, 42, 0.72);
+    box-shadow: none;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+}
+
+.cta-panel-minimal h2 {
+    margin: 0.5rem 0;
+    max-width: 19ch;
+    font-size: clamp(1.8rem, 4.4vw, 2.8rem);
+}
+
+.cta-actions-inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.footer-home {
+    border-top: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(9, 13, 23, 0.92);
+    padding: 1.3rem 0 1.6rem;
+}
+
+.footer-inner-minimal {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem 1.2rem;
+}
+
+.footer-meta {
+    color: #cbd5e1;
+    font-size: 0.84rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .home-page .btn.primary:hover,
+    .home-page .btn.secondary:hover,
+    .site-header-home .btn.header-cta:hover {
+        transform: translateY(-2px);
+        border-color: rgba(147, 197, 253, 0.8);
+        background: rgba(15, 23, 42, 0.95);
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(147, 197, 253, 0.68);
+    }
+}
+
+@media (max-width: 1120px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-column {
+        padding-top: 1.25rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .product-brand.is-shadmanager img {
+        max-height: 112px;
+    }
+
+    .cta-panel-minimal {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-actions-inline {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 860px) {
+    .hero-minimal {
+        min-height: clamp(560px, 86vh, 760px);
+    }
+
+    .products-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .product-column:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .product-column,
+    .product-column:first-child,
+    .product-column:last-child {
+        padding: 1rem 0.05rem;
+    }
+
+    .product-brand {
+        min-height: 90px;
+    }
+
+    .product-brand.is-shadmanager {
+        min-height: 98px;
+    }
+
+    .product-brand.is-shadmanager img {
+        width: min(100%, 500px);
+        max-width: min(100%, 500px);
+        max-height: 108px;
+    }
+}
+
+@media (max-width: 640px) {
+    .landing-shell,
+    .footer-shell-wide,
+    .nav-shell-wide {
+        width: min(1440px, calc(100% - 1.4rem));
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(180deg, rgba(4, 7, 14, 0.9), rgba(4, 7, 14, 0.96)),
+            radial-gradient(70% 40% at 50% 0%, rgba(59, 130, 246, 0.14), transparent 75%);
+    }
+
+    .hero-media .hero-video {
+        display: none;
+    }
+
+    .hero-grid {
+        opacity: 0.1;
+    }
+
+    .home-page .hero-cta,
+    .cta-actions-inline {
+        width: 100%;
+    }
+
+    .home-page .hero-cta .btn,
+    .cta-actions-inline .btn {
+        width: 100%;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner-minimal {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-media .hero-video {
+        display: none;
+    }
+}
