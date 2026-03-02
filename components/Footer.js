@@ -1,6 +1,6 @@
 const links = [
     { href: "/#produtos", label: "Produtos" },
-    { href: "/#planos", label: "Planos" },
+    { href: "/#formulario", label: "Orçamento" },
     { href: "/#formulario", label: "Contato" },
 ];
 
@@ -18,16 +18,16 @@ export default function Footer({ home = false }) {
             >
                 <p className="footer-brand">SHAD SOLUTIONS</p>
 
-                <nav className="footer-links" aria-label={"Links do rodap\u00e9"}>
+                <nav className="footer-links" aria-label="Links do rodapé">
                     {links.map((link) => (
-                        <a href={link.href} key={link.href}>
+                        <a href={link.href} key={`${link.href}-${link.label}`}>
                             {link.label}
                         </a>
                     ))}
                 </nav>
 
                 <div className="footer-info">
-                    <p className="footer-meta">{`\u00a9 ${year} SS Solu\u00e7\u00f5es Digitais`}</p>
+                    <p className="footer-meta">{`© ${year} SS Soluções Digitais`}</p>
                     <p className="footer-meta">CNPJ: 64.965.729 - ANGELO BRAGA MUZI</p>
                     <a
                         className="footer-social"

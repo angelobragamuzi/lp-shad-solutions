@@ -20,7 +20,7 @@ export default function Portfolio() {
                                 <span className="portfolio-tag">{project.category}</span>
                                 <h3>{project.name}</h3>
                                 <p>{project.description}</p>
-                                <a className="btn secondary" href="/planos#formulario">
+                                <a className="btn secondary" href="/#formulario">
                                     Quero um projeto assim
                                 </a>
                             </div>

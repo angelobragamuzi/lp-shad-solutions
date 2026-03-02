@@ -183,8 +183,9 @@
 }
 
 .benefits-section,
+.services-highlight-section,
+.future-lab-section,
 .proof-section,
-.plans-section,
 .plans-form,
 .cta-final-section {
     border-top: 1px solid rgba(148, 163, 184, 0.25);
@@ -202,6 +203,494 @@
 
 .section-head-left h2 {
     font-size: clamp(1.85rem, 4.2vw, 3rem);
+}
+
+.services-highlight-section {
+    background: linear-gradient(180deg, rgba(10, 14, 26, 0.96), rgba(9, 13, 23, 0.9));
+}
+
+.services-highlight-head {
+    width: min(980px, 100%);
+    margin: 0 auto 2.2rem;
+    display: grid;
+    gap: 0.9rem;
+    justify-items: center;
+    text-align: center;
+}
+
+.services-highlight-head h2 {
+    font-size: clamp(1.95rem, 4.6vw, 3.15rem);
+    max-width: 19ch;
+}
+
+.services-highlight-head p {
+    max-width: 76ch;
+    color: #c4d2e8;
+}
+
+.services-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.services-highlight-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background:
+        radial-gradient(
+            280px 160px at 100% -22%,
+            rgba(56, 189, 248, 0.14),
+            transparent 74%
+        ),
+        linear-gradient(165deg, rgba(13, 20, 36, 0.86), rgba(8, 13, 24, 0.96));
+    display: grid;
+    gap: 0.95rem;
+    justify-items: center;
+    text-align: center;
+    padding: 1.4rem 1.2rem 1.35rem;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.service-icon-orb {
+    width: 122px;
+    height: 122px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background:
+        radial-gradient(circle at 30% 24%, rgba(125, 211, 252, 0.16), transparent 58%),
+        rgba(10, 16, 30, 0.92);
+    display: grid;
+    place-items: center;
+    color: #dbeafe;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.56);
+}
+
+.services-highlight-card h3 {
+    font-size: 1.45rem;
+    line-height: 1.1;
+}
+
+.services-highlight-card p {
+    color: #c3d2e8;
+    font-size: 1.01rem;
+    line-height: 1.58;
+    max-width: 34ch;
+}
+
+.future-lab-section {
+    background:
+        radial-gradient(640px 360px at 90% 12%, rgba(30, 64, 175, 0.14), transparent 74%),
+        linear-gradient(180deg, rgba(8, 12, 24, 0.98), rgba(8, 12, 23, 0.92));
+    padding-top: clamp(5rem, 8.5vw, 7rem);
+    padding-bottom: clamp(4.8rem, 8vw, 6.5rem);
+}
+
+.future-lab-shell {
+    display: grid;
+    gap: 1.7rem;
+}
+
+.shadestagios-shell {
+    display: grid;
+    gap: 1.8rem;
+}
+
+.shadestagios-head {
+    width: min(820px, 100%);
+    display: grid;
+    gap: 0.8rem;
+}
+
+.shadestagios-head h2 {
+    font-size: clamp(2rem, 4.8vw, 3.2rem);
+    max-width: 13ch;
+}
+
+.shadestagios-head p {
+    max-width: 64ch;
+    color: #c7d6eb;
+}
+
+.shadestagios-roadmap {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background:
+        radial-gradient(420px 220px at 100% -8%, rgba(56, 189, 248, 0.08), transparent 75%),
+        linear-gradient(165deg, rgba(10, 16, 30, 0.92), rgba(8, 13, 25, 0.98));
+    padding: 1.2rem 1rem;
+    display: grid;
+    gap: 1.15rem;
+}
+
+.shadestagios-track {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.shadestagios-track-base,
+.shadestagios-track-fill {
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    height: 2px;
+}
+
+.shadestagios-track-base {
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(148, 163, 184, 0.22),
+        rgba(96, 165, 250, 0.35) 52%,
+        rgba(148, 163, 184, 0.22)
+    );
+}
+
+.shadestagios-track-fill {
+    width: var(--shadestagios-progress, 50%);
+    background: linear-gradient(
+        90deg,
+        rgba(191, 219, 254, 0.22),
+        rgba(248, 250, 252, 0.96) 52%,
+        rgba(191, 219, 254, 0.22)
+    );
+    box-shadow: 0 0 10px rgba(148, 197, 255, 0.34);
+}
+
+.shadestagios-milestones {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.shadestagios-milestone {
+    display: grid;
+    justify-items: center;
+    gap: 0.34rem;
+    text-align: center;
+}
+
+.shadestagios-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 2px solid rgba(147, 197, 253, 0.85);
+    background: #0b1325;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    display: grid;
+    place-items: center;
+    color: #0a1223;
+}
+
+.shadestagios-dot svg {
+    width: 9px;
+    height: 9px;
+    opacity: 0;
+}
+
+.shadestagios-step {
+    font-family: "Sora", sans-serif;
+    font-size: 0.67rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #9fb9dc;
+}
+
+.shadestagios-milestone.is-active .shadestagios-dot {
+    background: #f8fafc;
+    border-color: #f8fafc;
+    box-shadow: 0 0 0 6px rgba(248, 250, 252, 0.18);
+}
+
+.shadestagios-milestone.is-active .shadestagios-dot svg {
+    opacity: 1;
+}
+
+.shadestagios-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+    gap: 0.75rem;
+}
+
+.shadestagios-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background:
+        radial-gradient(180px 120px at 100% -10%, rgba(37, 99, 235, 0.08), transparent 75%),
+        rgba(9, 14, 27, 0.88);
+    padding: 0.88rem 0.72rem 0.72rem;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.shadestagios-card-code {
+    font-family: "Sora", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.66rem;
+    color: #9fb9dc;
+}
+
+.shadestagios-card h3 {
+    font-size: 0.96rem;
+    line-height: 1.2;
+    color: #ecf2ff;
+}
+
+.shadestagios-card p {
+    color: #bccbe2;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.shadestagios-status {
+    width: fit-content;
+    border: 1px solid rgba(148, 163, 184, 0.34);
+    padding: 0.1rem 0.42rem;
+    font-size: 0.68rem;
+    color: #d0dbeb;
+    background: rgba(15, 23, 42, 0.58);
+    margin-top: 0.14rem;
+}
+
+.shadestagios-status.done {
+    border-color: rgba(56, 189, 248, 0.6);
+    color: #d4f3ff;
+}
+
+.shadestagios-status.live {
+    border-color: rgba(96, 165, 250, 0.65);
+    color: #dbeafe;
+}
+
+.shadestagios-status.next {
+    border-color: rgba(148, 163, 184, 0.45);
+    color: #c7d2e4;
+}
+
+.future-roadmap-head {
+    width: min(900px, 100%);
+    display: grid;
+    gap: 0.78rem;
+    text-align: left;
+}
+
+.future-roadmap-head h2 {
+    font-size: clamp(2rem, 4.8vw, 3.3rem);
+    max-width: 14ch;
+}
+
+.future-roadmap-head p {
+    max-width: 66ch;
+    color: #c7d6eb;
+}
+
+.future-roadmap {
+    --track-y: clamp(8.8rem, 13.5vw, 10rem);
+    --card-gap: clamp(2.2rem, 3.8vw, 2.8rem);
+    --connector-size: 0.84rem;
+    position: relative;
+    overflow: clip;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    background:
+        radial-gradient(480px 240px at 100% -12%, rgba(56, 189, 248, 0.11), transparent 76%),
+        linear-gradient(165deg, rgba(11, 17, 31, 0.9), rgba(8, 13, 25, 0.96));
+    padding: 1.38rem clamp(0.85rem, 1.8vw, 1.55rem);
+}
+
+.future-track {
+    position: absolute;
+    left: var(--rail-pad, clamp(0.82rem, 2vw, 1.7rem));
+    right: var(--rail-pad, clamp(0.82rem, 2vw, 1.7rem));
+    top: var(--track-y);
+    height: 2px;
+    z-index: 0;
+}
+
+.future-track-base,
+.future-track-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.future-track-base {
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(125, 211, 252, 0.15),
+        rgba(59, 130, 246, 0.35) 45%,
+        rgba(125, 211, 252, 0.15)
+    );
+}
+
+.future-track-progress {
+    width: calc(var(--roadmap-stop, 50) * 1%);
+    background: linear-gradient(
+        90deg,
+        rgba(191, 219, 254, 0.18),
+        rgba(248, 250, 252, 0.95) 56%,
+        rgba(191, 219, 254, 0.18)
+    );
+    box-shadow: 0 0 12px rgba(148, 197, 255, 0.34);
+}
+
+.future-stages {
+    --rail-pad: clamp(0.82rem, 2vw, 1.7rem);
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    min-height: clamp(322px, 30vw, 392px);
+}
+
+.future-stage-item {
+    position: absolute;
+    left: calc(var(--rail-pad) + (100% - (var(--rail-pad) * 2)) * var(--stage-pos));
+    top: var(--track-y);
+    transform: translateX(-50%);
+    width: clamp(148px, 15.6vw, 205px);
+    z-index: 1;
+}
+
+.future-stage-item::before {
+    content: "";
+    position: absolute;
+    left: calc(50% - 0.5px);
+    width: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        180deg,
+        rgba(148, 163, 184, 0.18),
+        rgba(147, 197, 253, 0.74)
+    );
+    z-index: 0;
+}
+
+.future-stage-item.top::before {
+    top: calc(var(--connector-size) * -1);
+    height: var(--connector-size);
+}
+
+.future-stage-item.bottom::before {
+    top: 0;
+    height: var(--connector-size);
+}
+
+.future-stage-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border: 1px solid rgba(148, 163, 184, 0.27);
+    background:
+        radial-gradient(
+            200px 130px at 100% -16%,
+            rgba(37, 99, 235, 0.1),
+            transparent 75%
+        ),
+        rgba(9, 14, 27, 0.88);
+    padding: 0.94rem 0.7rem 0.68rem;
+    min-height: 136px;
+    display: grid;
+    gap: 0.38rem;
+    transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.future-stage-item.top .future-stage-card {
+    bottom: var(--card-gap);
+}
+
+.future-stage-item.bottom .future-stage-card {
+    top: var(--card-gap);
+}
+
+.future-stage-node {
+    position: absolute;
+    left: 50%;
+    top: -0.58rem;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 2px solid rgba(147, 197, 253, 0.9);
+    background: #0b1325;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    display: grid;
+    place-items: center;
+    z-index: 2;
+}
+
+.future-stage-item.is-progressed .future-stage-node {
+    background: #f8fafc;
+    border-color: #f8fafc;
+    box-shadow: 0 0 0 6px rgba(248, 250, 252, 0.18);
+}
+
+.future-stage-check {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: #0a1223;
+    opacity: 0;
+}
+
+.future-stage-check svg {
+    width: 9px;
+    height: 9px;
+    display: block;
+}
+
+.future-stage-item.is-progressed .future-stage-check {
+    opacity: 1;
+}
+
+.future-stage-code {
+    font-family: "Sora", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.66rem;
+    color: #9fb9dc;
+}
+
+.future-stage-card h3 {
+    font-size: 0.92rem;
+    line-height: 1.2;
+    color: #ecf2ff;
+}
+
+.future-stage-summary {
+    color: #bccbe2;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.future-stage-badge {
+    width: fit-content;
+    border: 1px solid rgba(148, 163, 184, 0.34);
+    padding: 0.1rem 0.42rem;
+    font-size: 0.68rem;
+    color: #d0dbeb;
+    background: rgba(15, 23, 42, 0.58);
+    margin-top: 0.18rem;
+}
+
+.future-stage-badge.done {
+    border-color: rgba(56, 189, 248, 0.6);
+    color: #d4f3ff;
+}
+
+.future-stage-badge.live {
+    border-color: rgba(96, 165, 250, 0.65);
+    color: #dbeafe;
+}
+
+.future-stage-badge.next {
+    border-color: rgba(148, 163, 184, 0.45);
+    color: #c7d2e4;
 }
 
 .benefits-grid {
@@ -242,25 +731,15 @@
     background: linear-gradient(180deg, rgba(9, 13, 23, 0.86), rgba(9, 13, 23, 0.97));
 }
 
-.plans-section {
-    background: linear-gradient(180deg, rgba(9, 13, 23, 0.97), rgba(8, 12, 22, 0.98));
-}
-
 .plans-form {
     background: linear-gradient(180deg, rgba(8, 12, 22, 0.98), rgba(7, 10, 18, 1));
     padding-bottom: clamp(4rem, 8vw, 5.6rem);
 }
 
-.home-page .plans-section .section-head,
-.home-page .plans-form .section-head {
+.home-page .home-contact-section .section-head {
     width: min(820px, 100%);
     margin: 0 0 2rem;
     text-align: left;
-}
-
-.home-page .plans-section .plans-disclaimer {
-    text-align: left;
-    margin-top: 1.2rem;
 }
 
 .home-form-actions {
@@ -273,8 +752,7 @@
 
 .products-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.3rem;
+    gap: 1.4rem;
     align-items: start;
 }
 
@@ -282,32 +760,74 @@
     display: grid;
     gap: 0.9rem;
     max-width: 74ch;
+    margin-bottom: 0.2rem;
 }
 
-.products-columns {
+.products-overview {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-    border-top: 1px solid rgba(148, 163, 184, 0.22);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+    gap: 0.85rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.product-column {
-    padding: 1.5rem 1.2rem 1.4rem;
+.products-overview-card {
+    border: 1px solid rgba(148, 163, 184, 0.26);
+    background: rgba(10, 16, 30, 0.72);
+    padding: 0.9rem 1rem;
     display: grid;
-    gap: 0.78rem;
+    gap: 0.35rem;
     min-width: 0;
 }
 
-.product-column:first-child {
-    border-right: 1px solid rgba(148, 163, 184, 0.2);
-    padding-left: 0.2rem;
-    padding-right: 1.2rem;
+.products-overview-label {
+    font-family: "Sora", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: #b7c7df;
 }
 
-.product-column:last-child {
-    padding-left: 1.2rem;
-    padding-right: 0.2rem;
+.products-overview-value {
+    color: #e2e8f0;
+    font-size: 0.97rem;
+    line-height: 1.35;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.home-product-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background:
+        radial-gradient(
+            320px 190px at 100% -18%,
+            rgba(37, 99, 235, 0.12),
+            transparent 76%
+        ),
+        linear-gradient(165deg, rgba(14, 22, 39, 0.86), rgba(8, 12, 23, 0.96));
+    padding: 1.3rem 1.2rem 1.25rem;
+    display: grid;
+    gap: 0.85rem;
+    min-width: 0;
+}
+
+.home-product-head {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.home-product-category {
+    width: fit-content;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: rgba(10, 16, 30, 0.72);
+    padding: 0.18rem 0.5rem;
+    font-family: "Sora", sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.69rem;
+    color: #cfdcf0;
 }
 
 .product-brand {
@@ -346,28 +866,68 @@
     max-height: 86px;
 }
 
-.product-summary {
-    color: #cbd5e1;
-    font-size: 0.98rem;
-    max-width: 72ch;
+.product-brand.is-shadboard {
+    min-height: 96px;
 }
 
-.product-points {
+.product-brand.is-shadboard img {
+    width: min(100%, 420px);
+    max-width: min(100%, 420px);
+    max-height: 72px;
+}
+
+.home-product-summary {
+    color: #cbd5e1;
+    font-size: 0.96rem;
+}
+
+.home-product-audience {
+    color: #aebed6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.home-product-highlights {
     list-style: none;
     display: grid;
-    gap: 0.32rem;
+    gap: 0.42rem;
     color: #cbd5e1;
-    font-size: 0.93rem;
+    font-size: 0.9rem;
 }
 
-.product-points li::before {
-    content: "- ";
-    color: #7dd3fc;
+.home-product-highlights li {
+    position: relative;
+    padding-left: 0.95rem;
 }
 
-.product-column .btn {
+.home-product-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.58rem;
+    width: 5px;
+    height: 5px;
+    background: #7dd3fc;
+}
+
+.home-product-modules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+}
+
+.home-product-module {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(15, 23, 42, 0.68);
+    padding: 0.2rem 0.5rem;
+    color: #c4d4ea;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.home-product-card .btn {
     width: fit-content;
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
 }
 
 .cta-final-section {
@@ -428,6 +988,21 @@
         transform: translateY(-3px);
         border-color: rgba(147, 197, 253, 0.68);
     }
+
+    .services-highlight-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(125, 211, 252, 0.72);
+    }
+
+    .shadestagios-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(125, 211, 252, 0.68);
+    }
+
+    .future-stage-card:hover {
+        border-color: rgba(125, 211, 252, 0.68);
+        transform: translateX(-50%) translateY(-2px);
+    }
 }
 
 @media (max-width: 1120px) {
@@ -435,9 +1010,69 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .product-column {
-        padding-top: 1.25rem;
-        padding-bottom: 1.2rem;
+    .services-highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shadestagios-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .future-roadmap {
+        --card-gap: 1.85rem;
+        --connector-size: 0.72rem;
+        padding: 1.2rem 0.88rem;
+    }
+
+    .future-stages {
+        min-height: 286px;
+    }
+
+    .future-stage-item {
+        width: clamp(120px, 16vw, 168px);
+    }
+
+    .future-stage-item.top::before {
+        top: calc(var(--connector-size) * -1);
+        height: var(--connector-size);
+    }
+
+    .future-stage-item.bottom::before {
+        top: 0;
+        height: var(--connector-size);
+    }
+
+    .future-stage-item.top .future-stage-card {
+        bottom: var(--card-gap);
+    }
+
+    .future-stage-item.bottom .future-stage-card {
+        top: var(--card-gap);
+    }
+
+    .future-stage-card {
+        min-height: 122px;
+        padding: 0.78rem 0.56rem 0.58rem;
+    }
+
+    .future-stage-card h3 {
+        font-size: 0.84rem;
+    }
+
+    .future-stage-summary {
+        font-size: 0.71rem;
+    }
+
+    .future-stage-badge {
+        font-size: 0.63rem;
+    }
+
+    .products-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .product-brand.is-shadmanager img {
@@ -458,19 +1093,173 @@
         min-height: clamp(560px, 86vh, 760px);
     }
 
-    .products-columns {
+    .shadestagios-track {
+        padding: 0.08rem 0 0.12rem 1.35rem;
+    }
+
+    .shadestagios-track-base,
+    .shadestagios-track-fill {
+        left: 0.55rem;
+        top: 0.28rem;
+        bottom: 0.28rem;
+        width: 2px;
+        height: auto;
+    }
+
+    .shadestagios-track-fill {
+        width: 2px;
+        height: var(--shadestagios-progress-mobile, 50%);
+        background: linear-gradient(
+            180deg,
+            rgba(191, 219, 254, 0.22),
+            rgba(248, 250, 252, 0.96) 52%,
+            rgba(191, 219, 254, 0.22)
+        );
+    }
+
+    .shadestagios-milestones {
+        grid-template-columns: 1fr;
+        gap: 0.68rem;
+    }
+
+    .shadestagios-milestone {
+        justify-items: start;
+        text-align: left;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .shadestagios-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .future-roadmap-head {
+        max-width: 100%;
+    }
+
+    .future-roadmap {
+        padding: 1rem 0.85rem;
+    }
+
+    .future-stages {
+        --rail-pad: 0;
+        min-height: auto;
+        display: grid;
+        gap: 0.72rem;
+        padding: 0 0 0 1.46rem;
+    }
+
+    .future-track {
+        left: 0.68rem;
+        right: auto;
+        top: 0.74rem;
+        bottom: 0.74rem;
+        width: 2px;
+        height: auto;
+        transform: none;
+    }
+
+    .future-track-base,
+    .future-track-progress {
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .future-track-base {
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            rgba(125, 211, 252, 0.2),
+            rgba(59, 130, 246, 0.4) 50%,
+            rgba(125, 211, 252, 0.2)
+        );
+    }
+
+    .future-track-progress {
+        width: 100%;
+        height: calc(var(--roadmap-stop-mobile, 56) * 1%);
+        background: linear-gradient(
+            180deg,
+            rgba(191, 219, 254, 0.22),
+            rgba(248, 250, 252, 0.98) 52%,
+            rgba(191, 219, 254, 0.22)
+        );
+    }
+
+    .future-stage-item {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+    }
+
+    .future-stage-item::before {
+        left: -0.78rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.78rem;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.12),
+            rgba(147, 197, 253, 0.62)
+        );
+    }
+
+    .future-stage-item.top::before,
+    .future-stage-item.bottom::before {
+        left: -0.78rem;
+        top: 50%;
+        width: 0.78rem;
+        height: 1px;
+        transform: translateY(-50%);
+    }
+
+    .future-stage-node {
+        left: -0.78rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .future-stage-card,
+    .future-stage-item.top .future-stage-card,
+    .future-stage-item.bottom .future-stage-card {
+        position: relative;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .services-highlight-grid,
+    .products-overview,
+    .products-grid {
         grid-template-columns: 1fr;
     }
 
-    .product-column:first-child {
-        border-right: none;
-        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    .services-highlight-head {
+        justify-items: start;
+        text-align: left;
     }
 
-    .product-column,
-    .product-column:first-child,
-    .product-column:last-child {
-        padding: 1rem 0.05rem;
+    .services-highlight-card {
+        justify-items: start;
+        text-align: left;
+        padding: 1.1rem;
+    }
+
+    .service-icon-orb {
+        width: 98px;
+        height: 98px;
+    }
+
+    .home-product-card {
+        padding: 1.05rem;
     }
 
     .product-brand {
@@ -521,6 +1310,46 @@
 
     .benefits-grid {
         grid-template-columns: 1fr;
+    }
+
+    .shadestagios-roadmap {
+        padding: 1rem 0.85rem;
+    }
+
+    .shadestagios-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .shadestagios-card {
+        padding: 0.78rem 0.62rem 0.62rem;
+    }
+
+    .shadestagios-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .shadestagios-card p {
+        font-size: 0.76rem;
+    }
+
+    .future-roadmap-head h2 {
+        max-width: 15ch;
+    }
+
+    .future-stages {
+        padding-left: 1.34rem;
+    }
+
+    .future-stage-card {
+        padding: 0.76rem 0.58rem 0.56rem;
+    }
+
+    .future-stage-card h3 {
+        font-size: 0.82rem;
+    }
+
+    .future-stage-summary {
+        font-size: 0.69rem;
     }
 
     .footer-inner-minimal {

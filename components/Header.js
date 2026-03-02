@@ -2,9 +2,10 @@ import Image from "next/image";
 import { BarChart3, MessageSquare, Rocket } from "lucide-react";
 
 const links = [
-    { href: "/#produtos", label: "Produtos", icon: BarChart3 },
-    { href: "/#planos", label: "Planos", icon: Rocket },
+    { id: "products", href: "/#produtos", label: "Produtos", icon: BarChart3 },
+    { id: "budget", href: "/#formulario", label: "Orçamento", icon: Rocket },
     {
+        id: "contact",
         href: "/#formulario",
         label: "Falar com especialista",
         icon: MessageSquare,
@@ -26,12 +27,12 @@ export default function Header({ home = false, onOpenContact }) {
                     />
                 </a>
 
-                <nav className="header-actions" aria-label={"Navega\u00e7\u00e3o principal"}>
+                <nav className="header-actions" aria-label="Navegação principal">
                     {links.map((link) => (
                         <a
                             className="header-action"
                             href={link.href}
-                            key={link.href}
+                            key={link.id}
                             onClick={(event) => {
                                 if (link.opensModal && typeof onOpenContact === "function") {
                                     event.preventDefault();

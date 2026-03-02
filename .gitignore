@@ -4,3 +4,9 @@ out/
 build/
 .DS_Store
 *.local
+tmp/
+*_tmp.html
+bing_*.html
+ddg_*.html
+pixabay_18050*
+pixabay_*_dump.html

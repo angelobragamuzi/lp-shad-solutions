@@ -2,6 +2,8 @@ import { useState } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import Services from "../components/Services";
+import FutureProductsSection from "../components/FutureProductsSection";
 import Differentials from "../components/Differentials";
 import HomePlansSection from "../components/HomePlansSection";
 import ContactModal from "../components/ContactModal";
@@ -29,7 +31,9 @@ export default function Home() {
             <Header home onOpenContact={() => setIsContactModalOpen(true)} />
             <main className="home-page">
                 <Hero />
+                <Services />
                 <Differentials />
+                <FutureProductsSection />
                 <HomePlansSection />
             </main>
             <Footer home />

@@ -17,7 +17,7 @@ export default function ContactSection({ onOpenContact }) {
                     <div className="cta-actions cta-actions-inline">
                         <a
                             className="btn primary"
-                            href="/planos#formulario"
+                            href="/#formulario"
                             onClick={(event) => {
                                 if (typeof onOpenContact === "function") {
                                     event.preventDefault();
@@ -27,8 +27,8 @@ export default function ContactSection({ onOpenContact }) {
                         >
                             Solicitar proposta
                         </a>
-                        <a className="btn secondary" href="/planos">
-                            Conhecer planos
+                        <a className="btn secondary" href="/#produtos">
+                            Conhecer produtos
                         </a>
                     </div>
                 </Reveal>

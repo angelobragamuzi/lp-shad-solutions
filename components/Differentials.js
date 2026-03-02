@@ -7,12 +7,42 @@ const products = [
         logoClass: "is-shadmanager",
         logoWidth: 1041,
         logoHeight: 324,
+        category: "Gestão de recorrência e cobrança",
         summary:
-            "Sistema de gest\u00e3o de mensalidades, pagamentos e inadimpl\u00eancia com cobran\u00e7as automatizadas e controle do neg\u00f3cio.",
-        points: [
-            "Controle de mensalidades e vencimentos",
-            "Cobran\u00e7as automatizadas para reduzir inadimpl\u00eancia",
-            "Vis\u00e3o clara da opera\u00e7\u00e3o em um painel objetivo",
+            "Sistema para controlar mensalidades, vencimentos e inadimplência com uma operação financeira clara e centralizada.",
+        audience:
+            "Ideal para negócios com cobrança recorrente que precisam de mais previsibilidade de receita.",
+        highlights: [
+            "Controle completo de mensalidades e vencimentos",
+            "Régua de cobrança automatizada por etapa",
+            "Painel operacional com visão de inadimplência em tempo real",
+        ],
+        modules: [
+            "Gestão de mensalidades",
+            "Fluxo de cobrança",
+            "Indicadores financeiros",
+        ],
+    },
+    {
+        name: "ShadBoard",
+        logo: "/shadboard.svg",
+        logoClass: "is-shadboard",
+        logoWidth: 653,
+        logoHeight: 130,
+        category: "Gestão urbana e operação pública",
+        summary:
+            "Plataforma para prefeituras acompanharem indicadores, ocorrências e resposta territorial em tempo real.",
+        audience:
+            "Ideal para secretarias e equipes de campo que precisam alinhar visão executiva com execução operacional.",
+        highlights: [
+            "Painel executivo com SLA, criticidade e histórico por protocolo",
+            "Mapa territorial para priorizar equipes por bairro e ocorrência",
+            "Fluxo completo do registro à resolução com rastreabilidade",
+        ],
+        modules: [
+            "Painel executivo",
+            "Gestão de ocorrências",
+            "Monitoramento territorial",
         ],
     },
     {
@@ -21,12 +51,20 @@ const products = [
         logoClass: "is-shadeduca",
         logoWidth: 623,
         logoHeight: 136,
+        category: "Educação digital e venda de cursos",
         summary:
-            "Plataforma estilo AVA que permite ao usu\u00e1rio comprar cursos e tamb\u00e9m subir conte\u00fados para venda.",
-        points: [
-            "Ambiente completo para compra de cursos",
-            "Publica\u00e7\u00e3o de cursos com fluxo simples",
-            "Estrutura pronta para escalar cat\u00e1logo e alunos",
+            "Plataforma de ensino online para vender cursos, publicar conteúdo e expandir o catálogo com estrutura escalável.",
+        audience:
+            "Pensado para especialistas, escolas e empresas que desejam monetizar conhecimento com autonomia.",
+        highlights: [
+            "Vitrine de cursos com jornada de compra objetiva",
+            "Publicação e organização simples de conteúdos",
+            "Base pronta para escalar alunos e novos programas",
+        ],
+        modules: [
+            "Catálogo de cursos",
+            "Publicação de conteúdo",
+            "Ambiente de aprendizado",
         ],
     },
 ];
@@ -37,41 +75,70 @@ export default function Differentials() {
             <div className="landing-shell products-layout">
                 <Reveal className="products-copy" delay={0.04}>
                     <span className="eyebrow">Produtos</span>
-                    <h2>{"Solu\u00e7\u00f5es pr\u00f3prias para gest\u00e3o e educa\u00e7\u00e3o digital."}</h2>
+                    <h2>Tecnologia aplicada para organizar operação e acelerar resultados.</h2>
                     <p className="text-lg">
-                        {"Conhe\u00e7a os produtos da Shad Solutions para organizar opera\u00e7\u00e3o, vender cursos e crescer com tecnologia aplicada ao neg\u00f3cio."}
+                        Nossas soluções focam em eficiência operacional, previsibilidade de receita
+                        e melhor experiência digital, com estrutura pronta para evoluir junto com
+                        o seu negócio.
                     </p>
                 </Reveal>
 
-                <div className="products-columns">
+                <Reveal className="products-overview" delay={0.08}>
+                    <article className="products-overview-card">
+                        <p className="products-overview-label">Portfólio de soluções</p>
+                        <p className="products-overview-value">Plataformas proprietárias para operações críticas</p>
+                    </article>
+                    <article className="products-overview-card">
+                        <p className="products-overview-label">Foco de negócio</p>
+                        <p className="products-overview-value">Recorrência, educação digital e gestão pública</p>
+                    </article>
+                    <article className="products-overview-card">
+                        <p className="products-overview-label">Modelo de entrega</p>
+                        <p className="products-overview-value">Implantação rápida com evolução contínua</p>
+                    </article>
+                </Reveal>
+
+                <div className="products-grid">
                     {products.map((product, index) => (
                         <Reveal
                             as="article"
-                            className="product-column"
+                            className="home-product-card"
                             delay={0.08 + index * 0.08}
                             key={product.name}
                         >
-                            <div className={`product-brand ${product.logoClass}`}>
-                                <img
-                                    src={product.logo}
-                                    alt={`Logo ${product.name}`}
-                                    width={product.logoWidth}
-                                    height={product.logoHeight}
-                                    loading={index === 0 ? "eager" : "lazy"}
-                                    decoding="async"
-                                />
+                            <div className="home-product-head">
+                                <div className={`product-brand ${product.logoClass}`}>
+                                    <img
+                                        src={product.logo}
+                                        alt={`Logo ${product.name}`}
+                                        width={product.logoWidth}
+                                        height={product.logoHeight}
+                                        loading={index === 0 ? "eager" : "lazy"}
+                                        decoding="async"
+                                    />
+                                </div>
+                                <p className="home-product-category">{product.category}</p>
                             </div>
 
-                            <p className="product-summary">{product.summary}</p>
+                            <p className="home-product-summary">{product.summary}</p>
+                            <p className="home-product-audience">{product.audience}</p>
 
-                            <ul className="product-points">
-                                {product.points.map((point) => (
-                                    <li key={point}>{point}</li>
+                            <ul className="home-product-highlights">
+                                {product.highlights.map((highlight) => (
+                                    <li key={highlight}>{highlight}</li>
                                 ))}
                             </ul>
 
+                            <div className="home-product-modules">
+                                {product.modules.map((module) => (
+                                    <span className="home-product-module" key={module}>
+                                        {module}
+                                    </span>
+                                ))}
+                            </div>
+
                             <a className="btn secondary" href="/#formulario">
-                                Quero saber mais
+                                Solicitar apresentação
                             </a>
                         </Reveal>
                     ))}

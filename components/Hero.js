@@ -44,14 +44,14 @@ export default function Hero() {
                         Software e sistemas personalizados para acelerar sua empresa.
                     </h1>
                     <p className="hero-subtitle">
-                        {"Criamos solu\u00e7\u00f5es sob medida para automatizar processos, aumentar produtividade e apoiar o crescimento do seu neg\u00f3cio."}
+                        {"Criamos soluções sob medida para automatizar processos, aumentar produtividade e apoiar o crescimento do seu negócio."}
                     </p>
                     <div className="hero-cta">
                         <a className="btn primary" href="/#formulario">
                             Iniciar projeto
                         </a>
-                        <a className="btn secondary" href="/#planos">
-                            Conhecer planos
+                        <a className="btn secondary" href="/#produtos">
+                            Conhecer produtos
                         </a>
                     </div>
                 </Reveal>

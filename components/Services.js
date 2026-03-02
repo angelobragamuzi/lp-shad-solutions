@@ -1,48 +1,55 @@
-﻿import Reveal from "./Reveal";
+import { Boxes, Code2, LifeBuoy } from "lucide-react";
+import Reveal from "./Reveal";
 
-const benefits = [
+const services = [
     {
-        title: "Escalabilidade nativa",
-        text: "Arquitetura pronta para crescer sem gargalos quando o volume subir.",
+        title: "Desenvolvimento sob medida",
+        description:
+            "Projetamos e construímos sistemas, aplicativos e landing pages alinhados ao processo real da sua operação.",
+        Icon: Code2,
     },
     {
-        title: "Performance first",
-        text: "Experiências rápidas e leves para elevar conversão e retenção.",
+        title: "Implantação de produtos Shad",
+        description:
+            "Configuramos nossas plataformas para o seu cenário e organizamos a entrada em produção com fluxo claro para a equipe.",
+        Icon: Boxes,
     },
     {
-        title: "Automação inteligente",
-        text: "Fluxos conectados que reduzem operação manual e aceleram decisões.",
-    },
-    {
-        title: "Evolução contínua",
-        text: "Base modular para lançar, iterar e expandir sem retrabalho.",
+        title: "Suporte e evolução contínua",
+        description:
+            "Mantemos o projeto saudável com ajustes, melhorias e entregas recorrentes para sustentar crescimento sem retrabalho.",
+        Icon: LifeBuoy,
     },
 ];
 
 export default function Services() {
     return (
-        <section className="benefits-section" id="beneficios">
+        <section className="services-highlight-section" id="servicos">
             <div className="landing-shell">
-                <Reveal className="section-head section-head-left">
-                    <span className="eyebrow">Benefícios</span>
-                    <h2>Estrutura digital para operar sem limites.</h2>
+                <Reveal className="services-highlight-head" delay={0.04}>
+                    <span className="eyebrow">Serviços</span>
+                    <h2>Do planejamento técnico à operação em produção.</h2>
                     <p className="text-lg">
-                        Menos ruído, mais velocidade e uma base preparada para
-                        crescimento real.
+                        A Shad atua na construção, implantação e evolução de soluções digitais
+                        para empresas e operações públicas que precisam de estrutura confiável
+                        para crescer.
                     </p>
                 </Reveal>
 
-                <div className="benefits-grid">
-                    {benefits.map((benefit, index) => (
+                <div className="services-highlight-grid">
+                    {services.map((service, index) => (
                         <Reveal
                             as="article"
-                            key={benefit.title}
-                            className="benefit-card"
-                            delay={index * 0.08}
+                            className="services-highlight-card"
+                            delay={0.08 + index * 0.08}
+                            key={service.title}
+                            direction="up"
                         >
-                            <span className="benefit-index">0{index + 1}</span>
-                            <h3>{benefit.title}</h3>
-                            <p>{benefit.text}</p>
+                            <div className="service-icon-orb" aria-hidden="true">
+                                <service.Icon size={40} strokeWidth={2.1} />
+                            </div>
+                            <h3>{service.title}</h3>
+                            <p>{service.description}</p>
                         </Reveal>
                     ))}
                 </div>

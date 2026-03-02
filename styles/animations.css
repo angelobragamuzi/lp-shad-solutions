@@ -1,1 +1,274 @@
-/* Animations removed to keep the background static. */
+@keyframes heroOverlayShift {
+    0% {
+        opacity: 0.82;
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: scale(1.015) translate3d(0, -0.5%, 0);
+    }
+
+    100% {
+        opacity: 0.86;
+        transform: scale(1.005) translate3d(0, 0.45%, 0);
+    }
+}
+
+@keyframes heroGridDrift {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+
+    100% {
+        background-position: 72px 72px, 72px 72px;
+    }
+}
+
+@keyframes ambientCardPulse {
+    0% {
+        opacity: 0.08;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.18;
+        transform: scale(1.02);
+    }
+
+    100% {
+        opacity: 0.1;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes shadestagiosTrackFill {
+    0% {
+        width: 0;
+        opacity: 0.45;
+    }
+
+    100% {
+        width: var(--shadestagios-progress, 50%);
+        opacity: 1;
+    }
+}
+
+@keyframes shadestagiosTrackFillMobile {
+    0% {
+        height: 0;
+        opacity: 0.45;
+    }
+
+    100% {
+        height: var(--shadestagios-progress-mobile, 50%);
+        opacity: 1;
+    }
+}
+
+@keyframes shadestagiosDotOn {
+    0% {
+        background: #0b1325;
+        border-color: rgba(147, 197, 253, 0.85);
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    }
+
+    100% {
+        background: #f8fafc;
+        border-color: #f8fafc;
+        box-shadow: 0 0 0 6px rgba(248, 250, 252, 0.18);
+    }
+}
+
+@keyframes shadestagiosCheckOn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes futureTrackProgress {
+    0% {
+        width: 0;
+        opacity: 0.45;
+    }
+
+    22% {
+        opacity: 1;
+    }
+
+    100% {
+        width: calc(var(--roadmap-stop, 50) * 1%);
+        opacity: 1;
+    }
+}
+
+@keyframes futureTrackProgressMobile {
+    0% {
+        height: 0;
+        opacity: 0.45;
+    }
+
+    22% {
+        opacity: 1;
+    }
+
+    100% {
+        height: calc(var(--roadmap-stop-mobile, 56) * 1%);
+        opacity: 1;
+    }
+}
+
+@keyframes futureNodeFill {
+    0% {
+        background: #0b1325;
+        border-color: rgba(147, 197, 253, 0.9);
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    }
+
+    70% {
+        background: #f8fafc;
+        border-color: #f8fafc;
+        box-shadow: 0 0 0 6px rgba(248, 250, 252, 0.2);
+    }
+
+    100% {
+        background: #f8fafc;
+        border-color: #f8fafc;
+        box-shadow: 0 0 0 6px rgba(248, 250, 252, 0.2);
+    }
+}
+
+@keyframes futureNodeCheck {
+    0% {
+        opacity: 0;
+        transform: scale(0.68);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scroll-reveal {
+    will-change: transform, opacity, filter;
+}
+
+.hero-overlay {
+    animation: heroOverlayShift 18s ease-in-out infinite;
+}
+
+.hero-grid {
+    animation: heroGridDrift 22s linear infinite;
+}
+
+.products-overview-card,
+.home-product-card,
+.form-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.products-overview-card::after,
+.home-product-card::after,
+.form-card::after {
+    content: "";
+    position: absolute;
+    width: 58%;
+    aspect-ratio: 1 / 1;
+    right: -18%;
+    top: -42%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.3) 0%, rgba(125, 211, 252, 0) 70%);
+    animation: ambientCardPulse 7.5s ease-in-out infinite;
+}
+
+.products-overview-card:nth-child(2)::after,
+.home-product-card:nth-child(2)::after,
+.form-card::after {
+    animation-delay: 1.6s;
+}
+
+.shadestagios-roadmap {
+    --shadestagios-duration: 4.2s;
+}
+
+.shadestagios-track-fill {
+    animation: shadestagiosTrackFill var(--shadestagios-duration) linear both;
+}
+
+.shadestagios-milestone.is-active .shadestagios-dot {
+    animation: shadestagiosDotOn 0.32s ease both;
+    animation-delay: calc(
+        (
+                (var(--milestone-index, 0) / var(--shadestagios-total-segments, 4)) /
+                    var(--shadestagios-stop-ratio, 0.5)
+            ) * var(--shadestagios-duration)
+    );
+}
+
+.shadestagios-milestone.is-active .shadestagios-dot svg {
+    animation: shadestagiosCheckOn 0.25s ease both;
+    animation-delay: calc(
+        (
+                (var(--milestone-index, 0) / var(--shadestagios-total-segments, 4)) /
+                    var(--shadestagios-stop-ratio, 0.5)
+            ) * var(--shadestagios-duration) + 0.08s
+    );
+}
+
+.future-roadmap {
+    --timeline-duration: 4.6s;
+}
+
+.future-track-progress {
+    transform-origin: left center;
+    animation: futureTrackProgress var(--timeline-duration) linear both;
+}
+
+.future-stage-item.is-progressed .future-stage-node {
+    animation: futureNodeFill 0.36s ease both;
+    animation-delay: calc((var(--stage-progress, 0) * var(--timeline-duration)) - 0.12s);
+}
+
+.future-stage-item.is-progressed .future-stage-check {
+    animation: futureNodeCheck 0.26s ease both;
+    animation-delay: calc((var(--stage-progress, 0) * var(--timeline-duration)) + 0.02s);
+}
+
+@media (max-width: 860px) {
+    .shadestagios-track-fill {
+        animation-name: shadestagiosTrackFillMobile;
+    }
+
+    .future-track-progress {
+        transform-origin: center top;
+        animation-name: futureTrackProgressMobile;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        will-change: auto;
+    }
+
+    .hero-overlay,
+    .hero-grid,
+    .products-overview-card::after,
+    .home-product-card::after,
+    .form-card::after,
+    .shadestagios-track-fill,
+    .shadestagios-milestone.is-active .shadestagios-dot,
+    .shadestagios-milestone.is-active .shadestagios-dot svg,
+    .future-track-progress,
+    .future-stage-item.is-progressed .future-stage-node,
+    .future-stage-item.is-progressed .future-stage-check {
+        animation: none !important;
+    }
+}

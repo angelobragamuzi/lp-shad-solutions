@@ -61,7 +61,7 @@ export default function ShadManagerSection() {
                             <li>Opção de cobrar diretamente a pessoa inadimplente.</li>
                         </ul>
                         <div className="product-actions">
-                            <a className="btn primary" href="/planos#formulario">
+                            <a className="btn primary" href="/#formulario">
                                 Quero uma demonstração
                             </a>
                             <a className="btn secondary" href="/#contato">
