@@ -5,6 +5,7 @@ import "../styles/layout.css";
 import "../styles/components.css";
 import "../styles/animations.css";
 import "../styles/home.css";
+import "../styles/briefing.css";
 
 export default function MyApp({ Component, pageProps }) {
     return (
